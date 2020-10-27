@@ -21,14 +21,12 @@ jobs:
             chmod +x geckodriver &&
             sudo mv geckodriver /usr/local/bin
       - run:
-         name: Install the latest firefox
+          name: Install Latest Browsers
           command: |
-            sudo apt-get install firefox-mozilla-build
-            sudo apt-get remove firefox-mozilla-build binutils &&
-            sudo sh -c "echo 'deb http://ftp.hr.debian.org/debian sid main' >> /etc/apt/sources.list" &&
-            sudo apt-get update &&
-            sudo apt-get install -t sid firefox &&
-            firefox --version
+            wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+            sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+            sudo apt-get update && sudo apt-get upgrade firefox
+            sudo apt-get install google-chrome-stable
       
       - run:
           name: Run rspec
