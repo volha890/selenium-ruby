@@ -21,7 +21,7 @@ jobs:
             chmod +x geckodriver &&
             sudo mv geckodriver /usr/local/bin
       - run:
-          name: Install the latest firefox
+         name: Install the latest firefox
           command: |
             sudo apt-get install firefox-mozilla-build
             sudo apt-get remove firefox-mozilla-build binutils &&
