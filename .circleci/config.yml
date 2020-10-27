@@ -14,12 +14,9 @@ jobs:
           command: bundle -v
       - ruby/bundle-install
       - run:
-      name: Bundle Install
-      command: bundle check || bundle install
-  
-  - run:
-      name: Run rspec
-      command: |
-        bundle exec rspec blog-test.rb
+          name: Run rspec
+          command: bundle exec rspec blog-test.rb
       
 
+
+  
