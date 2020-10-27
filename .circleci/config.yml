@@ -16,17 +16,17 @@ jobs:
       - run:
           name: Install geckodriver
           command: |
-            wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz &&
+            wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz &&
             tar -xvzf geckodriver* &&
             chmod +x geckodriver &&
             sudo mv geckodriver /usr/local/bin
       - run:
-        name: Install the latest firefox
+          name: Install the latest firefox
           command: |
             sudo apt-get remove firefox-mozilla-build binutils &&
             sudo sh -c "echo 'deb http://ftp.hr.debian.org/debian sid main' >> /etc/apt/sources.list" &&
             sudo apt-get update &&
-            dpkg -i firefox-mozilla-build
+            sudo apt-get install -t sid firefox &&
             firefox --version
       
       - run:
