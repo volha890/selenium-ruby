@@ -16,6 +16,6 @@ jobs:
       - run:
           name: "Run tests"
           command: |
-           rspec blog-test.rb
+           sudo bundle exec rspec blog-test.rb
       
 
