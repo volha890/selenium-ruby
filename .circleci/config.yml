@@ -23,15 +23,15 @@ jobs:
       - run:
           name: Install Latest Browsers
           command: |
-            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            sudo apt install ./google-chrome-stable_current_amd64.deb
+            sudo apt-get install unzip
             wget https://chromedriver.storage.googleapis.com/87.0.4280.20/chromedriver_linux64.zip
             unzip chromedriver_linux64.zip
-            ./chromedriver:
-              background: true
-    
-   
-      
+            unzip ~/Downloads/chromedriver_linux64.zip -d ~/Downloads
+            chmod +x ~/Downloads/chromedriver
+            sudo mv -f ~/Downloads/chromedriver /usr/local/share/chromedriver
+            sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+            sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+            
       - run:
           name: Run rspec
           command: bundle exec rspec blog-test.rb
