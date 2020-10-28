@@ -27,7 +27,7 @@ jobs:
             wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/87.0.4280.20/chromedriver_linux64.zip
             sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            sudo dpkg -i /tmp/google-chrome-stable_current_amd64.deb 
+            sudo dpkg -i google-chrome-stable_current_amd64.deb 
             
       - run:
           name: Run rspec
