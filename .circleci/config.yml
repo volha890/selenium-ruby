@@ -38,8 +38,8 @@ jobs:
             sudo apt-get install -y xdg-utils
             sudo dpkg -i google-chrome-stable_current_amd64.deb 
             sudo apt-get install xvfb 
-            nohup sudo Xvfb :10 -ac
-            export DISPLAY=:10
+            export DISPLAY=:99
+            Xvfb :99 -ac -screen 0 1280x1024x24 &
             
             
       - run:
