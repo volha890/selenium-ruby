@@ -28,8 +28,17 @@ jobs:
             sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo apt-get update -y
+            sudo apt-get install -y fonts-liberation
+            sudo apt-get install -y libasound2-dev
+            sudo apt-get install -y libatk-bridge2.0-0
+            sudo apt-get install -y libatspi2.0-0
+            sudo apt-get install -y libgbm1
+            sudo apt-get install -y libgtk-3-0
+            sudo apt-get install -y libnspr4-0d
+            sudo apt-get install -y libnss3-tools
+            sudo apt-get install -y xdg-utils
             sudo dpkg -i google-chrome-stable_current_amd64.deb 
-            sudo apt install -f
+            
             
       - run:
           name: Run rspec
