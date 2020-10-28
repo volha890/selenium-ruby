@@ -6,7 +6,7 @@ describe "Blog application" do
   describe "signup to the blog application" do
     it "confirm that a user can successfully signup" do
       timestamp = Time.now.to_i
-      driver = Selenium::WebDriver.for :firefox
+      driver = Selenium::WebDriver.for :chrome
   		# Go to signup form
   		driver.navigate.to "https://selenium-blog.herokuapp.com/signup"
   		# Fill out and submit form
