@@ -28,8 +28,8 @@ jobs:
             sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo apt-get update -y
-            sudo apt install -f
             sudo dpkg -i google-chrome-stable_current_amd64.deb 
+            sudo apt install -f
             
       - run:
           name: Run rspec
