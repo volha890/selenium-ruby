@@ -28,7 +28,7 @@ jobs:
             sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo apt-get update -y
-            sudo apt-get install -y libgconf2-4 libnss3-1d libxss1
+            sudo apt install libappindicator1 libdbusmenu-glib4 libdbusmenu-gtk4 libindicator7 libpango1.0-0 libpangox-1.0-0
             sudo dpkg -i google-chrome-stable_current_amd64.deb 
             
       - run:
